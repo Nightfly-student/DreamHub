@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Lucid.Page1"
+             xmlns:custom="clr-namespace:Lucid.Views"
+             Title="Discover"
+             BackgroundColor="Black">
+
+    <NavigationPage.TitleView>
+        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+            <Label
+                Text="Discover"
+                TextColor="White"
+                VerticalOptions="Center"
+                FontSize="20"/>
+            <SearchBar Placeholder="Search" TextChanged="OnTextChanged" CancelButtonColor="white" HorizontalOptions="End" PlaceholderColor="Gray" WidthRequest="200" TextColor="White" VerticalOptions="Center" />
+            </StackLayout>
+    </NavigationPage.TitleView>
+    
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <ListView Grid.Row="1" ItemsSource="{Binding JournalItem}" x:Name="publicRefresh" HasUnevenRows="True" ItemTapped="onTapped" IsGroupingEnabled="true" GroupDisplayBinding="{Binding dreamDate}" IsPullToRefreshEnabled="true" RefreshControlColor="Orange" IsRefreshing="False">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <custom:CustomViewCell SelectedItemBackgroundColor="#000000" >
+                            <ViewCell.View>
+                                <Frame CornerRadius="20" BorderColor="#2C2C2C" BackgroundColor="#212121" Margin="0,0,0,20">
+                                    <Grid Padding="0,10" ColumnSpacing="10">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+                                        <Label Text="{Binding journalTitle}" Grid.Row="0" TextColor="#ffff" FontSize="Title" TextDecorations="Underline" Padding="0,10"/>
+                                        <Label Text="{Binding journalDesc}" MaxLines="3" Grid.Row="1" TextColor="#ffff"/>
+
+                                        <Grid Grid.Row="2" Padding="0,10">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="0.5*"/>
+                                                <ColumnDefinition Width="0.5*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Label Text="{Binding journalAwareness, StringFormat='Awareness: {0}'}" Grid.Column="0" TextColor="Orange"/>
+                                            <Label Text="{Binding journalVivid, StringFormat='Clarity: {0}'}"  Grid.Column="1" TextColor="Orange"/>
+                                        </Grid>
+                                        <Label Text="{Binding journalCategory}" HorizontalOptions="End"/>
+                                        <Grid Grid.Row="3">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="0.7*"/>
+                                                <ColumnDefinition Width="0.3*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Label Text="{Binding dreamLikes, StringFormat='Likes: {0}'}" HorizontalOptions="End" Grid.Column="1" TextColor="#dfdfe5" Padding="0,10"/>
+                                            <Label Text="{Binding userName, StringFormat='Created by: {0}'}" HorizontalOptions="Start" Grid.Column="0" TextColor="#dfdfe5" Padding="0,10"/>
+                                        </Grid>
+                                    </Grid>
+                                </Frame>
+                            </ViewCell.View>
+                        </custom:CustomViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

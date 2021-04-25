@@ -1,0 +1,9 @@
+C:\Users\Jelle\source\repos\Lucid\Connection\bin\Debug\netstandard2.0\Connection.deps.json
+C:\Users\Jelle\source\repos\Lucid\Connection\bin\Debug\netstandard2.0\Connection.dll
+C:\Users\Jelle\source\repos\Lucid\Connection\obj\Debug\netstandard2.0\Connection.AssemblyInfoInputs.cache
+C:\Users\Jelle\source\repos\Lucid\Connection\obj\Debug\netstandard2.0\Connection.AssemblyInfo.cs
+C:\Users\Jelle\source\repos\Lucid\Connection\bin\Debug\netstandard2.0\Connection.pdb
+C:\Users\Jelle\source\repos\Lucid\Connection\obj\Debug\netstandard2.0\Connection.csprojAssemblyReference.cache
+C:\Users\Jelle\source\repos\Lucid\Connection\obj\Debug\netstandard2.0\Connection.csproj.CoreCompileInputs.cache
+C:\Users\Jelle\source\repos\Lucid\Connection\obj\Debug\netstandard2.0\Connection.dll
+C:\Users\Jelle\source\repos\Lucid\Connection\obj\Debug\netstandard2.0\Connection.pdb

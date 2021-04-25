@@ -1,0 +1,8 @@
+C:\Users\Jelle\source\repos\Lucid\Lucid\Lucid.iOS\obj\iPhone\Release\ibtool\_BundleResourceWithLogicalName.items
+C:\Users\Jelle\source\repos\Lucid\Lucid\Lucid.iOS\obj\iPhone\Release\actool\_PartialAppManifest.items
+C:\Users\Jelle\source\repos\Lucid\Lucid\Lucid.iOS\obj\iPhone\Release\actool\_BundleResourceWithLogicalName.items
+C:\Users\Jelle\source\repos\Lucid\Lucid\Lucid.iOS\obj\iPhone\Release\coremlc\_PartialAppManifest.items
+C:\Users\Jelle\source\repos\Lucid\Lucid\Lucid.iOS\obj\iPhone\Release\coremlc\_BundleResourceWithLogicalName.items
+C:\Users\Jelle\source\repos\Lucid\Lucid\Lucid.iOS\obj\iPhone\Release\optimized\
+C:\Users\Jelle\source\repos\Lucid\Lucid\Lucid.iOS\obj\iPhone\Release\Lucid.iOS.csprojAssemblyReference.cache
+C:\Users\Jelle\source\repos\Lucid\Lucid\Lucid.iOS\obj\iPhone\Release\Lucid.iOS.csproj.CoreCompileInputs.cache

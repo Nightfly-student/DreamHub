@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             x:Class="Lucid.Views.publicJournal"
+             xmlns:custom="clr-namespace:Lucid.Views"
+             BackgroundColor="Black">
+    <ContentPage.Content>
+        <AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <ScrollView AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
+                <Grid RowSpacing="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="AUTO"/>
+                        <RowDefinition Height="AUTO"/>
+                        <RowDefinition Height="AUTO"/>
+                        <RowDefinition Height="AUTO"/>
+                        <RowDefinition Height="AUTO"/>
+                        <RowDefinition Height="AUTO"/>
+                    </Grid.RowDefinitions>
+
+                    <!--TITLE-->
+                    <Frame Grid.Row="0" BackgroundColor="#212121" Opacity="10" CornerRadius="20" Margin="0,10">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="AUTO"/>
+                                <RowDefinition Height="AUTO"/>
+                                <RowDefinition Height="AUTO"/>
+                                <RowDefinition Height="AUTO"/>
+                                <RowDefinition Height="AUTO"/>
+                            </Grid.RowDefinitions>
+                            <Label Text="Report" x:Name="ReportLabel" VerticalOptions="End" Grid.Row="0" HorizontalOptions="End">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnTappReportDream"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                            <Label Grid.Row="1" x:Name="journalName"  HorizontalOptions="Center" FontSize="Title" TextColor="White" TextDecorations="Underline"/>
+                            <Label Grid.Row="2" x:Name="journalDesc" HorizontalOptions="Center" FontSize="Body" Padding="0,25" TextColor="White"/>
+                            <Label Grid.Row="3" x:Name="journalDate" HorizontalOptions="End" Padding="0,0,20,0" TextColor="WhiteSmoke"/>
+
+                            <Label Text="Like" x:Name="likeLabel" VerticalOptions="End" Grid.Row="4" HorizontalOptions="Start">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnTapLikeDream"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </Grid>
+                    </Frame>
+                    <Frame Grid.Row="2" BackgroundColor="#212121" Opacity="10" CornerRadius="20" Margin="0,10">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="AUTO"/>
+                                <RowDefinition Height="AUTO"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.5*"/>
+                                <ColumnDefinition Width="0.5*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Row="0" Grid.Column="0" Text="Awareness" TextColor="#dfdfe5" HorizontalOptions="Center"/>
+                            <Label Grid.Row="1" Grid.Column="0" x:Name="journalAwareness" HorizontalOptions="Center" TextColor="White"/>
+                            <Label Grid.Row="0" Grid.Column="1" Text="Clarity" TextColor="#dfdfe5" HorizontalOptions="Center"/>
+                            <Label Grid.Row="1" Grid.Column="1" x:Name="journalVivid"  HorizontalOptions="Center" TextColor="White"/>
+                        </Grid>
+                    </Frame>
+                    <Frame Grid.Row="3" BackgroundColor="#212121" Opacity="10" CornerRadius="20" Margin="0,10">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="AUTO"/>
+                                <RowDefinition Height="AUTO"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.5*"/>
+                                <ColumnDefinition Width="0.5*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Row="0" Grid.Column="0" TextColor="#dfdfe5" Text="Lucid" HorizontalOptions="Center"/>
+                            <Label Grid.Row="0" Grid.Column="1" TextColor="#dfdfe5" Text="Category" HorizontalOptions="Center"/>
+                            <Label Grid.Row="1" Grid.Column="0" x:Name="journalLucid" HorizontalOptions="Center" TextColor="White"/>
+                            <Label Grid.Row="1" Grid.Column="1" x:Name="journalCategory" HorizontalOptions="Center" TextColor="White"/>
+                        </Grid>
+                    </Frame>
+                    <Frame Grid.Row="4" BackgroundColor="#212121" Opacity="10" CornerRadius="20" Margin="0,10" x:Name="noTagClear">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="AUTO"/>
+                                <RowDefinition Height="AUTO"/>
+                            </Grid.RowDefinitions>
+                            <Label Grid.Row="0" Text="Tags" TextColor="#dfdfe5" FontSize="Medium" HorizontalOptions="Center"/>
+                            <Label Grid.Row="1" x:Name="tagLabel" TextColor="White" FontSize="Body" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
+                        </Grid>
+                    </Frame>
+
+                    <ListView Grid.Row="5" ItemsSource="{Binding CommentItem}" ItemTapped="onCommentTap" x:Name="personalFresh" IsGroupingEnabled="true" GroupDisplayBinding="{Binding CommentDate}" RefreshControlColor="Orange">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <custom:CustomViewCell SelectedItemBackgroundColor="#000000" >
+                                    <ViewCell.View>
+                                        <Frame CornerRadius="20" BorderColor="#2C2C2C" BackgroundColor="#212121" Margin="0,0,0,20">
+                                            <Grid Padding="0,10" ColumnSpacing="10">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="Auto"/>
+                                                    <RowDefinition Height="*"/>
+                                                    <RowDefinition Height="Auto"/>
+                                                    <RowDefinition Height="Auto"/>
+                                                </Grid.RowDefinitions>
+                                                <Label Text="{Binding CommentText}" Grid.Row="0" TextColor="#ffff" FontSize="Medium" Padding="0,10"/>
+                                                <Label Text="{Binding CommentUser, StringFormat='User: {0}'}" MaxLines="3" Grid.Row="1" TextColor="#ffff"/>
+                                            </Grid>
+                                        </Frame>
+                                    </ViewCell.View>
+                                </custom:CustomViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
+            </ScrollView>
+            <Button Text="Comment" FontSize="15" TextTransform="Lowercase" TextColor="White" Clicked="commentDream" WidthRequest="100" HeightRequest="50" Margin="20" FontAttributes="Bold" BackgroundColor="Orange" CornerRadius="20" d:AbsoluteLayout.LayoutFlags="PositionProportional" d:AbsoluteLayout.LayoutBounds="1,1,AutoSize,AutoSize"/>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

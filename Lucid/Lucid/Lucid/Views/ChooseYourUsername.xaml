@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Lucid.Views.ChooseYourUsername"
+             BackgroundColor="Black">
+    <ContentPage.Content>
+        <Grid RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid RowSpacing="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+
+                <Image Grid.Row="0" Source="IconNated.png" HorizontalOptions="Center" WidthRequest="200" HeightRequest="200"/>
+                <Label Grid.Row="1" Text="Choose Your Name" FontAttributes="Bold" HorizontalOptions="Center" FontSize="30" Padding="0,20" TextColor="White"/>
+                <Label Grid.Row="2" Text="Username" TextColor="White" Padding="55,10,0,0" FontAttributes="Bold" FontSize="15"/>
+                <Entry Grid.Row="3" x:Name="UsernameEntry" TextColor="White" BackgroundColor="Black" WidthRequest="300" HorizontalOptions="Center"/>
+                <BoxView Grid.Row="4" WidthRequest="300" HorizontalOptions="Center" BackgroundColor="White" HeightRequest="1"/>
+                <Button Grid.Row="6" FontSize="20" Clicked="ChooseUsername" Text="Enter DreamHub" TextTransform="Lowercase" HorizontalOptions="Center" WidthRequest="200" BackgroundColor="Orange" CornerRadius="25"/>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

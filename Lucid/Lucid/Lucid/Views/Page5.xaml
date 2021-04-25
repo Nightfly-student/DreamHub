@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Lucid.Page5"
+             xmlns:custom="clr-namespace:Lucid.Views"
+             BackgroundColor="black">
+
+    <NavigationPage.TitleView>
+        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+            <Label
+                Text="Profile"
+                TextColor="White"
+                VerticalOptions="Center"
+                FontSize="20"/>
+            <Label
+                x:Name="TokenString"
+                TextColor="White"
+                VerticalOptions="Center"
+                FontSize="20"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Button Clicked="Logout" Text="Logout"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

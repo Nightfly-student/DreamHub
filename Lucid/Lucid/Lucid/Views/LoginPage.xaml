@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Lucid.Views.LoginPage"
+             BackgroundColor="Black">
+    <ContentPage.Content>
+        <Grid RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <StackLayout Grid.Row="1">
+
+                <Grid RowSpacing="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="1"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="1"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+
+
+                    
+                    <Image Grid.Row="0" Source="IconNated.png" HorizontalOptions="Center" WidthRequest="200" HeightRequest="200"/>
+                    <Label Grid.Row="1" Text="Login" FontAttributes="Bold" HorizontalOptions="Center" FontSize="30" Padding="0,40" TextColor="White"/>
+                    <Label Grid.Row="2" Text="Email" TextColor="White" Padding="55,10,0,0" FontAttributes="Bold" FontSize="15"/>
+                    <Entry Grid.Row="3" x:Name="UsernameEntry" TextColor="White" BackgroundColor="Black" WidthRequest="300" HorizontalOptions="Center"/>
+                    <BoxView Grid.Row="4" WidthRequest="300" HorizontalOptions="Center" BackgroundColor="White" HeightRequest="1"/>
+                    <Label Grid.Row="5" Text="Password" TextColor="White" Padding="55,10,0,0" FontAttributes="Bold" FontSize="15"/>
+                    <Entry Grid.Row="6" x:Name="PasswordEntry" TextColor="White"  IsPassword="True" BackgroundColor="Black" ClearButtonVisibility="WhileEditing" WidthRequest="300" HorizontalOptions="Center"/>
+                    <BoxView Grid.Row="7" WidthRequest="300" HorizontalOptions="Center" BackgroundColor="White" HeightRequest="1"/>
+                    <Button Grid.Row="8" Clicked="LoginLog" Text="Login" HorizontalOptions="Center" WidthRequest="300" BackgroundColor="Orange" CornerRadius="25" Margin="0,10,0,0"/>
+                
+                    <Button Grid.Row="9" Clicked="OnLabelClick" Text="Not a member? Sign up now!" TextTransform="Lowercase" BackgroundColor="Black" TextColor="White" FontSize="20"/>
+
+                </Grid>
+            </StackLayout>
+
+
+
+
+        </Grid>
+       
+
+    </ContentPage.Content>
+</ContentPage>

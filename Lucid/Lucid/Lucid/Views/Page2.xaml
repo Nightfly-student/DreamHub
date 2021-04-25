@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             x:Class="Lucid.Page2"
+             Title="Your Journal"
+             xmlns:custom="clr-namespace:Lucid.Views"
+             BackgroundColor="Black">
+    
+    <NavigationPage.TitleView>
+        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+            <Label
+                Text="Your Journal"
+                TextColor="White"
+                VerticalOptions="Center"
+                FontSize="20"/>
+            <SearchBar Placeholder="Search" TextChanged="OnTextChanged" CancelButtonColor="white" HorizontalOptions="End" PlaceholderColor="Gray" WidthRequest="250" TextColor="White" VerticalOptions="Center" />
+        </StackLayout>
+    </NavigationPage.TitleView>
+    
+    <ContentPage.Content>
+        <AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <ListView Grid.Row="1" ItemsSource="{Binding JournalItem}" x:Name="personalFresh" HasUnevenRows="True" ItemTapped="onTapped" IsGroupingEnabled="true" GroupDisplayBinding="{Binding dreamDate}" IsPullToRefreshEnabled="true" RefreshControlColor="Orange" IsRefreshing="False">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <custom:CustomViewCell SelectedItemBackgroundColor="#000000" >
+                            <ViewCell.View>
+                                    <Frame CornerRadius="20" BorderColor="#2C2C2C" BackgroundColor="#212121" Margin="0,0,0,20">
+                                    <Grid Padding="0,10" ColumnSpacing="10">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                            </Grid.RowDefinitions>
+                                                <Label Text="{Binding journalTitle}" Grid.Row="0" TextColor="#ffff" FontSize="Title" TextDecorations="Underline" Padding="0,10"/>
+                                                <Label Text="{Binding journalDesc}" MaxLines="3" Grid.Row="1" TextColor="#ffff"/>
+
+                                            <Grid Grid.Row="2" Padding="0,10">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="0.5*"/>
+                                                    <ColumnDefinition Width="0.5*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Label Text="{Binding journalAwareness, StringFormat='Awareness: {0}'}" Grid.Column="0" TextColor="Orange"/>
+                                                <Label Text="{Binding journalVivid, StringFormat='Clarity: {0}'}"  Grid.Column="1" TextColor="Orange"/>
+                                            </Grid>
+                                            <Label Text="{Binding journalCategory}" TextColor="#dfdfe5" HorizontalOptions="End"/>
+                                     </Grid>
+                                </Frame>
+                            </ViewCell.View>
+                        </custom:CustomViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+            <Button Text="+" FontSize="25" Clicked="addDream" WidthRequest="50" HeightRequest="50" Margin="20" TextColor="White" FontAttributes="Bold" BackgroundColor="Orange" CornerRadius="50" d:AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="1,1,AutoSize,AutoSize"/>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

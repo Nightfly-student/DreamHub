@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "dgSpecHash": "lDDiO47mYnV4W+WlHUmB5s8MvEAkh3e000iszCznwOwpjTRYVIlmnp74cK9vcFnGNXRqg6Qxep4KeZoJzeTFbQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Jelle\\source\\repos\\Lucid\\Lucid\\Lucid.iOS\\Lucid.iOS.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Jelle\\.nuget\\packages\\syncfusion.licensing\\18.4.0.46\\syncfusion.licensing.18.4.0.46.nupkg.sha512",
+    "C:\\Users\\Jelle\\.nuget\\packages\\syncfusion.xamarin.buttons\\18.4.0.46\\syncfusion.xamarin.buttons.18.4.0.46.nupkg.sha512",
+    "C:\\Users\\Jelle\\.nuget\\packages\\syncfusion.xamarin.core\\18.4.0.46\\syncfusion.xamarin.core.18.4.0.46.nupkg.sha512",
+    "C:\\Users\\Jelle\\.nuget\\packages\\syncfusion.xamarin.sfcombobox\\18.4.0.46\\syncfusion.xamarin.sfcombobox.18.4.0.46.nupkg.sha512",
+    "C:\\Users\\Jelle\\.nuget\\packages\\system.configuration.configurationmanager\\5.0.0\\system.configuration.configurationmanager.5.0.0.nupkg.sha512",
+    "C:\\Users\\Jelle\\.nuget\\packages\\system.data.sqlclient\\4.8.2\\system.data.sqlclient.4.8.2.nupkg.sha512",
+    "C:\\Users\\Jelle\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\Jelle\\.nuget\\packages\\system.security.accesscontrol\\5.0.0\\system.security.accesscontrol.5.0.0.nupkg.sha512",
+    "C:\\Users\\Jelle\\.nuget\\packages\\system.security.permissions\\5.0.0\\system.security.permissions.5.0.0.nupkg.sha512",
+    "C:\\Users\\Jelle\\.nuget\\packages\\system.security.principal.windows\\5.0.0\\system.security.principal.windows.5.0.0.nupkg.sha512",
+    "C:\\Users\\Jelle\\.nuget\\packages\\xamarin.essentials\\1.6.1\\xamarin.essentials.1.6.1.nupkg.sha512",
+    "C:\\Users\\Jelle\\.nuget\\packages\\xamarin.forms\\5.0.0.2012\\xamarin.forms.5.0.0.2012.nupkg.sha512"
+  ],
+  "logs": []
+}

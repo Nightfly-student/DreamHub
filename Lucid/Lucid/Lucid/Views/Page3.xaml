@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             x:Class="Lucid.Page3"
+             xmlns:custom="clr-namespace:Lucid.Views"
+             Title="Information"
+             BackgroundColor="black">
+    
+    <AbsoluteLayout>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <ListView ItemsSource="{Binding rss}" ItemTapped="onArticleTapped">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                        <custom:CustomViewCell SelectedItemBackgroundColor="#000000" >
+                            <ViewCell.View>
+                                <Label Padding="10,0" VerticalOptions="Center" TextColor="White" Text="{Binding title}" />
+                                </ViewCell.View>
+                        </custom:CustomViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+        <Button Text="🔧" Clicked="OnFilterClicked" TextColor="White" FontSize="25" WidthRequest="50" HeightRequest="50" Margin="20" FontAttributes="Bold" BackgroundColor="Orange" CornerRadius="50" d:AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="1,1,AutoSize,AutoSize"/>
+    </AbsoluteLayout>
+</ContentPage>

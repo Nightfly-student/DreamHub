@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:lucid="clr-namespace:Lucid"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            android:TabbedPage.ToolbarPlacement="Bottom"
+            x:Class="Lucid.Main"
+            BackgroundColor="#191919"
+            BarTextColor="White">
+   
+  <!--Pages can be added as references or inline-->
+    <!--<lucid:Page1 Title="Feed" IconImageSource="Success.png"></lucid:Page1>-->
+    <NavigationPage Title="Feed" IconImageSource="Success.png">
+        <x:Arguments>
+            <lucid:Page1 />
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage Title="Journal" IconImageSource="Write.png">
+        <x:Arguments>
+            <lucid:Page2 />
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage Title="Info" IconImageSource="Video.png">
+        <x:Arguments>
+            <lucid:Page3 />
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage Title="Profile" IconImageSource="user.png">
+        <x:Arguments>
+            <lucid:Page5 />
+        </x:Arguments>
+    </NavigationPage>
+</TabbedPage>

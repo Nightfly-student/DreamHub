@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             x:Class="Lucid.Views.JournalEntry"
+             BackgroundColor="#121212"
+             Title="Journal Entry">
+    <ContentPage.Content>
+        <AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <ScrollView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+            <Grid RowSpacing="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="AUTO"/>
+                        <RowDefinition Height="AUTO"/>
+                    </Grid.RowDefinitions>
+
+
+                    <StackLayout Grid.Row="0" Padding="10">
+                        <Grid RowSpacing="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="AUTO"/>
+                                <RowDefinition Height="AUTO"/>
+                                <RowDefinition Height="AUTO"/>
+                                <RowDefinition Height="AUTO"/>
+                                <RowDefinition Height="AUTO"/>
+                                <RowDefinition Height="AUTO"/>
+                                <RowDefinition Height="AUTO"/>
+                                <RowDefinition Height="AUTO"/>
+                            </Grid.RowDefinitions>
+
+                            <Frame Grid.Row="0" BackgroundColor="#212121" Opacity="10" CornerRadius="20">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="AUTO"/>
+                                        <RowDefinition Height="AUTO"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid Grid.Row="0" Padding="0,10">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+                                        <Editor Grid.Row="0" x:Name="DreamTitle" TextColor="White" AutoSize="TextChanges" Placeholder="Name your dream" PlaceholderColor="#b2b2b2" HorizontalOptions="FillAndExpand" FontSize="18" FontAttributes="Bold"/>
+                                    </Grid>
+                                    <Editor x:Name="DreamDesc" Grid.Row="1" TextColor="White" Placeholder="What happened in your dream?" AutoSize="TextChanges" PlaceholderColor="#b2b2b2" HorizontalOptions="FillAndExpand" FontAttributes="Bold" FontSize="15"/>
+                                </Grid>
+                            </Frame>
+
+                            <Frame Grid.Row="1" BackgroundColor="#212121" CornerRadius="20" Margin="0,15">
+                                <Editor x:Name="DreamNotes" TextColor="White" Placeholder="Write Notes" AutoSize="TextChanges" PlaceholderColor="#b2b2b2" HorizontalOptions="FillAndExpand" FontAttributes="Bold" FontSize="15" />
+                            </Frame>
+
+                            <Frame Grid.Row="2" BackgroundColor="#212121" CornerRadius="20" Margin="0,5">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="AUTO"/>
+                                        <RowDefinition Height="AUTO"/>
+                                        <RowDefinition Height="AUTO"/>
+                                        <RowDefinition Height="AUTO"/>
+                                    </Grid.RowDefinitions>
+
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="auto"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="0.30*"/>
+                                            <ColumnDefinition Width="0.25*"/>
+                                            <ColumnDefinition Width="0.35*"/>
+                                            <ColumnDefinition Width="0.25*"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Label Grid.Row="0" Grid.Column="0" Text="Lucid Dream" TextColor="White" Padding="0,9"/>
+                                        <CheckBox x:Name="DreamIsLucid" CheckedChanged="OnCheckBoxLucid" Grid.Row="0" Grid.Column="1" Color="Orange"/>
+                                        <Label Grid.Row="0" Grid.Column="2" Text="|          Public" TextColor="White" Padding="0,9"/>
+                                        <CheckBox x:Name="DreamIsPublic" CheckedChanged="OnCheckBoxPublic" Grid.Row="0" Grid.Column="3" Color="Orange"/>
+                                    </Grid>
+
+                                    <StackLayout Grid.Row="4" Padding="0,20">
+                                        <BoxView BackgroundColor="White" HeightRequest="1" Opacity="0.5"/>
+                                        <Label Text="Vivid Level" TextColor="White"/>
+                                        <Slider Maximum="5" HorizontalOptions="FillAndExpand" x:Name="VividSlider" ValueChanged="VividSliderOnValueChanged"/>
+                                        <Label x:Name="VividLevelCaller" Text="None" HorizontalOptions="Center"/>
+                                        <Label Text="Awareness Level" TextColor="White" />
+                                        <Slider Maximum="5" HorizontalOptions="FillAndExpand" x:Name="AwarenessSlider" ValueChanged="AwarenessSliderOnValueChanged"/>
+                                        <Label x:Name="AwarenessLevelCaller" HorizontalOptions="Center" Text="None"/>
+                                    </StackLayout>
+                                </Grid>
+                            </Frame>
+
+                            <Frame Grid.Row="3" BackgroundColor="#212121" CornerRadius="20" Margin="0,13">
+
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="AUTO"/>
+                                        <RowDefinition Height="AUTO"/>
+                                    </Grid.RowDefinitions>
+
+                                    <Picker x:Name="DreamCategory" Grid.Row="0" Title="Select a dream category" TitleColor="White" TextColor="White" HorizontalOptions="Center">
+                                        <Picker.ItemsSource>
+                                            <x:Array Type="{x:Type x:String}">
+                                                <x:String>Normal</x:String>
+                                                <x:String>Nightmare</x:String>
+                                                <x:String>False Awakening</x:String>
+                                                <x:String>Recurring</x:String>
+                                                <x:String>NSFW</x:String>
+                                            </x:Array>
+                                        </Picker.ItemsSource>
+                                    </Picker>
+                                    <StackLayout Grid.Row="1" Padding="0,20" x:Name="DreamTagLayout">
+                                        <Label Text="" x:Name="lblTag" TextColor="Orange"/>
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="AUTO"/>
+                                                <RowDefinition Height="AUTO"/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="0.5*"/>
+                                                <ColumnDefinition Width="0.5*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Button Grid.Row="1" Grid.Column="0" Text="Add Tag" Clicked="AddDreamTag" BackgroundColor="#202020"/>
+                                            <Button Grid.Row="1" Grid.Column="1" Text="Delete Tag" Clicked="deleteDreamTag" BackgroundColor="#202020"/>
+                                        </Grid>
+                                    </StackLayout>
+                                </Grid>
+
+                            </Frame>
+
+                        </Grid>
+                    </StackLayout>
+                </Grid>
+        </ScrollView>
+        <Button Text="Add" Clicked="SafeDream" VerticalOptions="End" Margin="20" FontAttributes="Bold" BackgroundColor="Orange" CornerRadius="20" d:AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="1,1,AutoSize,AutoSize"/>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>
